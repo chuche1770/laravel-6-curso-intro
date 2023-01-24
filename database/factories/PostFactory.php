@@ -17,7 +17,16 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id'   => 1,
+            'title'     => $this->faker->sentence,
+            'body'      => $this->faker->text(800),
         ];
+       /* Larvel 6:
+        return [
+            'user_id' =>1,
+            'title'   =>$faker->sentence,
+            'body'    =>$faker->text(800),
+        ];
+        */
     }
 }
