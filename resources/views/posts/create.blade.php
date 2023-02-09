@@ -15,12 +15,12 @@
                     @endif
 
                     <form action="{{route('posts.store')}}"
-                        method="post"
-                        enctype="multipart/form-date"
+                        method="POST"
+                        enctype="multipart/form-data"
                     >
 
                         <div class="form-group mb-2">
-                            <label for="">Título *</label>
+                            <label >Título *</label>
                             <input type="text" name="title" class="form-control" required>
                         </div>
                         <div class="form-group mb-2">
@@ -34,7 +34,7 @@
 
                         <div class="form-group mb-2">
                             <label for="">Contenido embebido</label>
-                            <textarea name="iframe" class="form-control" required></textarea>
+                            <textarea name="iframe" class="form-control"></textarea>
                         </div>
                         <div class="form-group mb-2">
                             @csrf

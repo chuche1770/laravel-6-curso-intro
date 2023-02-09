@@ -9,6 +9,15 @@ class Post extends Model
 {
     use HasFactory;
     use Sluggable;
+
+    //con esto le decimos a laravel que solo acepte esos datos en cantidad entomces los filtre
+    protected $fillable = [
+        'title',
+        'body',
+        'iframe',
+        'image',
+        'user_id',
+    ];
     /**
      * Return the sluggable configuration array for this model.
      *
