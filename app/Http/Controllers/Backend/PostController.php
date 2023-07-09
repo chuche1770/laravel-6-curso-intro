@@ -73,9 +73,17 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        dd($request->all());
+        $post->update($request->all());
+        //imagen
+        if($request->file('file')){
+            //eliminar imagen
+            $post->image = $request->file('file')->store('posts','public');
+            $post->save();
+        }
+        return back()->with('status','Actualizado con éxito');
     }
 
     /**
@@ -86,6 +94,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        //eliminación de imagen
+        $post->delete();
+        return back()->with('status', 'Eliminado con éxito');
     }
 }

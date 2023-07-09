@@ -29,10 +29,11 @@
                         </div>
                         <div class="form-group mb-2">
                             <label>Contenido embebido</label>
-                            <textarea name="iframe" class="form-control" required>{{ old('iframe',$post->iframe) }}</textarea>
+                            <textarea name="iframe" class="form-control">{{ old('iframe',$post->iframe) }}</textarea>
                         </div>
                         <div class="form-group mb-2">
                             @csrf
+                            @method('PUT')
                             <input id="my-input" class="btn btn-sm btn-primary" type="submit" value="Actualizar" name="">
                         </div>
                     </form>
